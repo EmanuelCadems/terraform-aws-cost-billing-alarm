@@ -29,6 +29,12 @@ variable "datapoints_to_alarm" {
   default     = null
 }
 
+variable "period" {
+  description = "Period in seconds. To make it work as expected please set 'Period' to 6 hours, 'Statistic' to Maximum and set alarm to trigger on 1 consecutive period"
+  type        = number
+  default     = 21600
+}
+
 #=============================#
 # SNS                         #
 #=============================#
