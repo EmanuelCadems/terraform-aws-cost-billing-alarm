@@ -3,7 +3,7 @@ locals {
   alarm = {
     name                = "account-billing-alarm-${lower(var.currency)}-${var.aws_env}"
     description         = var.aws_account_id == null ? "Billing consolidated alarm >= ${var.currency} ${var.monthly_billing_threshold}" : "Billing alarm account ${var.aws_account_id} >= ${var.currency} ${var.monthly_billing_threshold}"
-    comparison_operator = "GreaterThanOrEqualToThreshold"
+    comparison_operator = "GreaterThanThreshold"
     evaluation_periods  = "1"
     metric_name         = "EstimatedCharges"
     namespace           = "AWS/Billing"
