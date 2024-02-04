@@ -12,8 +12,7 @@ locals {
     alarm_actions       = var.create_sns_topic ? concat([aws_sns_topic.sns_alert_topic[0].arn], var.sns_topic_arns) : var.sns_topic_arns
 
     dimensions = {
-      currency       = var.currency
-      linked_account = var.aws_account_id
+      currency = var.currency
     }
   }
 
